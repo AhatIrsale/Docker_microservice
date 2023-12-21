@@ -1,0 +1,21 @@
+version: '3'
+services:
+  eureka-server:
+    image: eureka-server
+    ports:
+      - "8761:8761"
+  service-client:
+    image: service-client
+    ports:
+      - "8088:8088"
+  service-gateway:
+    image: service-gateway
+    ports:
+      - "8888:8888"
+  service-voiture:
+    image: service-voiture
+    ports:
+      - "8089:8089"
+networks:
+  mynetwork:
+    driver: bridge
